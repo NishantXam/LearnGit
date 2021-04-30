@@ -52,6 +52,7 @@ namespace Poc.ViewModels
                     MessagingCenter.Subscribe<Data>(this, "Data", (value) =>
                       {
                           EmployeesList.Add(new Employee { Name = value.Name, Address = value.Address });
+                          MessagingCenter.Unsubscribe<Data>(this, "Data");
                       });
                 });
             }
