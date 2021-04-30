@@ -4,14 +4,14 @@
              x:Class="Poc.MainPage">
     <ContentPage.Content>
         <StackLayout>
-            <ListView>
+            <ListView ItemsSource="{Binding EmployeesList}">
                <ListView.ItemTemplate>
                    <DataTemplate>
                        <TextCell Text="{Binding Name}" Detail="{Binding Address}"/>
                    </DataTemplate>
                </ListView.ItemTemplate>
             </ListView>
-            <Button Text="Add Employee" HorizontalOptions="FillAndExpand"/>
+            <Button Text="Add Employee" Command="{Binding AddEmployee}" HorizontalOptions="FillAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
