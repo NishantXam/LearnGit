@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xct:Popup
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    Size="300,300"
+    x:Class="Poc.Views.AddEmployeePopup">
+    <xct:Popup.Content>
+        <Frame Padding="0"  CornerRadius="10" HasShadow="False" IsClippedToBounds="True">
+            <StackLayout Margin="10" VerticalOptions="FillAndExpand">
+                <Label Text=" Add Employee Card" FontAttributes="Bold"
+                   FontSize="Title" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
+                <Label Text="Name : " FontAttributes="Bold"/>
+                <Entry Text="{Binding Name}" Placeholder="Enter Name" HorizontalTextAlignment="Start"/>
+                <Label Text="Address : " FontAttributes="Bold"/>
+                <Entry Text="{Binding Address}" Placeholder="Enter Address" HorizontalTextAlignment="Start"/>
+                <Grid ColumnDefinitions="*,*">
+                    <Button Grid.Column="0" Padding="0" CornerRadius="4"
+                        Text="Cancle" TextColor="Red" Command="{Binding CancleCmd}"/>
+                    <Button Grid.Column="1" Padding="0" CornerRadius="4"
+                        Text="Add Employee" TextColor="Green" Command="{Binding SubmitCmd}"/>
+                </Grid>
+            </StackLayout>
+        </Frame>
+    </xct:Popup.Content>
+</xct:Popup>

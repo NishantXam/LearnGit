@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    x:Class="Poc.Views.PopUpPage">
+     <Frame Padding="0">
+        <StackLayout>
+            <Label Text=" Add Employee Card" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
+            <Label Text="Name : "/>
+            <Entry Text="{Binding Name}" HorizontalTextAlignment="Start"/>
+            <Label Text="Address : "/>
+            <Entry Text="{Binding Address}" HorizontalTextAlignment="Start"/>
+        </StackLayout>
+    </Frame>
+</xct:Popup>
