@@ -42,6 +42,15 @@ namespace Poc.ViewModels
             };
         }
 
+        public Command POCCmd
+        {
+            //public ICommand SignInCommand => new Command(async () => await SignInAsync());
+            get
+            {
+                return new Command(() => { Navigation.PushAsync(new PocTitlePage(Navigation)); });
+            }
+        }
+
         public Command AddEmployee
         {
             get

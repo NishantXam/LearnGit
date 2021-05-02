@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Picker Demo"
+    x:Class="Poc.Views.PickerPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="0">
+                <Picker x:Name="picker" Title="Select a monkey" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="20" TitleColor="Red" ItemsSource="{Binding Monkeys}"
+                    ItemDisplayBinding="{Binding Name}"  SelectedItem="{Binding SelectedMonkey}" />
+                <Label Text="{Binding SelectedMonkey.Name}" IsVisible="{Binding Isvisible}"  HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="25"/>
+                <Label Text="{Binding SelectedMonkey.Location}"  IsVisible="{Binding Isvisible}"  HorizontalTextAlignment="Center" FontAttributes="None" FontSize="20"/>
+                <Frame Padding="0" CornerRadius="10" Margin="10" IsVisible="{Binding Isvisible}"  HeightRequest="400" >
+                    <Image Source="{Binding SelectedMonkey.ImageUrl}" IsVisible="{Binding Isvisible}"  HeightRequest="400" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Aspect="AspectFill"/>
+                </Frame>
+                <Label Text="{Binding SelectedMonkey.Details}" IsVisible="{Binding Isvisible}"  Margin="10" FontAttributes="Italic"  HorizontalTextAlignment="Start" FontSize="16"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
