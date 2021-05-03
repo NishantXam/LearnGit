@@ -16,7 +16,7 @@ namespace Poc.ViewModels
             }
             set
             {
-                if(_selectedItem !=value)
+                if (_selectedItem != value)
                 {
                     _selectedItem = value;
                     OnSelectedMethod();
@@ -24,7 +24,7 @@ namespace Poc.ViewModels
             }
         }
 
-       
+
 
         ObservableCollection<PocData> _PocDataList;
         public ObservableCollection<PocData> PocDataList
@@ -45,19 +45,33 @@ namespace Poc.ViewModels
             Navigation = navigation;
             PocDataList = new ObservableCollection<PocData>
             {
-                new PocData { Title = "Picker", Details = "Select Item for picker MVVM"}
+                new PocData { Title = "Picker", Details = "Select Item for picker MVVM"},
+                new PocData { Title = "Dependency Services", Details = "Phone calling in Android using Services"},
+                new PocData { Title = "IValueConverter", Details = "Converting a number into Textcolor"}
             };
         }
         private void OnSelectedMethod()
         {
             // App.Current.MainPage.DisplayAlert("Selected Item",$"You Have selected {SelectedItem.Title} for {SelectedItem.Details}","Ok") ;
-            Navigation.PushAsync(new PickerPage(Navigation));
+            if (SelectedItem.Title.Contains("Picker"))
+            {
+                Navigation.PushAsync(new PickerPage(Navigation));
+            }
+            else if (SelectedItem.Title.Contains("Dependency"))
+            {
+                Navigation.PushAsync(new PhoneCallPage(Navigation));
+            }
+            else if (SelectedItem.Title.Contains("IValueConverter"))
+            {
+                Navigation.PushAsync(new PhoneCallPage(Navigation));
+            }
         }
     }
-
-    public class PocData
-    {
-        public string Title { get; set; }
-        public string Details { get; set; }
-    }
 }
+
+public class PocData
+{
+    public string Title { get; set; }
+    public string Details { get; set; }
+}
+

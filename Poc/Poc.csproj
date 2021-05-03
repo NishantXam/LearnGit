@@ -18,5 +18,8 @@
   <ItemGroup>
     <Folder Include="ViewModels\" />
     <Folder Include="Views\" />
+    <Folder Include="Helper\" />
+    <Folder Include="Helper\Dependency\" />
+    <Folder Include="Helper\Converters\" />
   </ItemGroup>
 </Project>

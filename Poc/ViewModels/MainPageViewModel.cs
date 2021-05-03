@@ -42,6 +42,13 @@ namespace Poc.ViewModels
             };
         }
 
+        public Command command = new Command(call());
+
+        private static Action<object> call()
+        {
+            throw new NotImplementedException();
+        }
+
         public Command POCCmd
         {
             //public ICommand SignInCommand => new Command(async () => await SignInAsync());

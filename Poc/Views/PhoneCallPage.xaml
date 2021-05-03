@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Poc.Views.PhoneCallPage">
+    <StackLayout>
+        <Entry x:Name="PhoneNumberText" Text="{Binding PhoneNumber,Mode=TwoWay}" Placeholder="Enter Number" Keyboard="Telephone" HorizontalOptions="FillAndExpand" MaxLength="10"/>
+        <Button Text="Call Me" HorizontalOptions="FillAndExpand" Clicked="Button_Clicked" />
+        <Label Text="{Binding PhoneNumber,Mode=TwoWay}" TextColor="{Binding PhoneNumber,Converter={StaticResource colorConverter}}" FontSize="30"/>
+    </StackLayout>
+</ContentPage>
